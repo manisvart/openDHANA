@@ -1,0 +1,32 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides: openDHANA-scriptor
+# Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: openDHANA-scriptor
+# Description: This file starts and stops openDHANA-scriptor server
+# 
+### END INIT INFO
+
+case "$1" in
+ start)
+   /usr/local/bin/openDHANA-scriptor
+   ;;
+ stop)
+   pid=`pidof -x /usr/local/bin/openDHANA-scriptor`
+   kill $pid 
+   sleep 1
+   ;;
+ restart)
+   pid=`pidof -x /usr/local/bin/openDHANA-scriptor`
+   kill $pid 
+   sleep 1
+   /usr/local/bin/openDHANA-scriptor
+   ;;
+ *)
+   echo "Usage: $0 {start|stop|restart}" >&2
+   exit 3
+   ;;
+esac

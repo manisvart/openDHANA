@@ -1,0 +1,32 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides: openDHANA-ir
+# Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: openDHANA-ir
+# Description: This file starts and stops openDHANA-ir server
+# 
+### END INIT INFO
+
+case "$1" in
+ start)
+   /usr/local/bin/openDHANA-ir
+   ;;
+ stop)
+   pid=`pidof -x /usr/local/bin/openDHANA-ir`
+   kill $pid 
+   sleep 1
+   ;;
+ restart)
+   pid=`pidof -x /usr/local/bin/openDHANA-ir`
+   kill $pid 
+   sleep 1
+   /usr/local/bin/openDHANA-ir
+   ;;
+ *)
+   echo "Usage: $0 {start|stop|restart}" >&2
+   exit 3
+   ;;
+esac
