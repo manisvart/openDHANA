@@ -1,0 +1,13 @@
+# Set and get dimmer values
+subscribe mqtt_topic="sweden/stockholm/main_house/floor-1/dining_hall/lights/south/window_lamp/set_level" internal_topic="10:user:COMMAND_CLASS_SWITCH_MULTILEVEL:1:0:byte" qos=2
+publish mqtt_topic="sweden/stockholm/main_house/floor-1/dining_hall/lights/south/window_lamp" internal_topic="10:user:COMMAND_CLASS_SWITCH_MULTILEVEL:1:0:byte" retain=false qos=2
+
+# Configure an Aeon Multisensor
+subscribe mqtt_topic="sweden/stockholm/garage/sensor/config/group_1_reports"	internal_topic="2:config:COMMAND_CLASS_CONFIGURATION:1:101:int" qos=2
+
+# Get values from an Aeon Multisensor
+publish mqtt_topic="sweden/stockholm/garage/sensor/motion" internal_topic="2:user:COMMAND_CLASS_SENSOR_BINARY:1:0:bool" retain=false qos=2
+publish mqtt_topic="sweden/stockholm/garage/sensor/temperature" internal_topic="2:user:COMMAND_CLASS_SENSOR_MULTILEVEL:1:1:decimal" retain=true qos=2
+publish mqtt_topic="sweden/stockholm/garage/sensor/light" internal_topic="2:user:COMMAND_CLASS_SENSOR_MULTILEVEL:1:3:decimal" retain=true qos=2
+publish mqtt_topic="sweden/stockholm/garage/sensor/humidity" internal_topic="2:user:COMMAND_CLASS_SENSOR_MULTILEVEL:1:5:decimal" retain=true qos=2
+publish mqtt_topic="sweden/stockholm/garage/sensor/battery" internal_topic="2:user:COMMAND_CLASS_BATTERY:1:0:byte" retain=true qos=2

@@ -1,0 +1,7 @@
+# These are our IR-blasters from different manufacturers
+itach name="upstairs" address="upstairs-itach-1.opendhana.se" port=4998
+
+# These are our equipments that we want to control
+device name="Yamaha receiver" itach="upstairs" ir_port="1:2" equipment="Yamaha RX-V767"
+device name="Sagemcom" itach="upstairs" ir_port="1:2" equipment="Sagemcom DT-90 HD"
+device name="Samsung TV" itach="upstairs" ir_port="1:3" equipment="Samsung UE55F70"

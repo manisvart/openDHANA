@@ -1,0 +1,13 @@
+# Scene
+publish mqtt_topic="sweden/stockholm/scene" internal_topic="change_scene" retain=true qos=2
+subscribe mqtt_topic="sweden/stockholm/scene" internal_topic="scene_changed" qos=2
+
+# External light
+subscribe mqtt_topic="sweden/stockholm/garage/sensor/light" internal_topic="external_light_changed" qos=2
+
+# Lower inner hallway
+publish mqtt_topic="sweden/stockholm/main_house/floor-1/inner_hallway/lights/south/table_lamp/set_level" internal_topic="change_lower_inner_hallway" qos=2 retain=false
+subscribe mqtt_topic="sweden/stockholm/main_house/floor-1/inner_hallway/sensor/motion" internal_topic="motion_in_lower_inner_hallway_detected" qos=2
+
+# Master bedroom
+publish mqtt_topic="sweden/stockholm/main_house/floor-1/master_bedroom/lights/east/window_lamp/set_level" internal_topic="change_master_bedroom" qos=2 retain=false

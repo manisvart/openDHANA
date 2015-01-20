@@ -1,0 +1,5 @@
+mqtt_map_file="/etc/openDHANA/scriptor/openDHANA-scriptor.mqttmap"
+#mqtt_log_file="/var/log/openDHANA/openDHANA-scriptor.log"
+scriptor_lua_directory="/etc/openDHANA/scriptor/lua/"
+daemon=false
+mqtt_debug=true

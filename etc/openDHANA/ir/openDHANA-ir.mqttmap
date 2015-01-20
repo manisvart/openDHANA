@@ -1,0 +1,4 @@
+subscribe mqtt_topic="sweden/stockholm/homecinema/scene" internal_topic="set_scene" qos=2
+
+subscribe mqtt_topic="sweden/stockholm/homecinema/volume/set_level" internal_topic="change_volume" qos=2
+publish mqtt_topic="sweden/stockholm/homecinema/volume" internal_topic="volume_changed" qos=2 retain=false

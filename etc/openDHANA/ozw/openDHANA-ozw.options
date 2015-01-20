@@ -1,0 +1,5 @@
+mqtt_map_file="/etc/openDHANA/ozw/openDHANA-ozw.mqttmap"
+#mqtt_log_file="/var/log/openDHANA/openDHANA-ozw.log"
+daemon=false
+mqtt_debug=true
+ozw_debug=true
